@@ -64,7 +64,7 @@
           alex.picks($(this).data('pick'));
           tony.picks('rock');
 
-          $('#results li').append('<li>' + game.winningMessage() + '</li>');
+          $('#results').prepend('<li>' + game.winningMessage() + '</li>');
         })
       })
     </script>
