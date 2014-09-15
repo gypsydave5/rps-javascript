@@ -7,7 +7,7 @@ Game.prototype.winner = function(){
 	if (this.player1.pick === this.player2.pick) {
 		return null;
 	};
-	if (this.PAIRS[this.player1.pick]['beats'].indexOf(this.player2.pick) !== -1 ){
+	if (this.PAIRS[this.player1.pick][this.player2.pick] !== undefined) {
 		return this.player1;
 	}
 	else {
@@ -16,9 +16,9 @@ Game.prototype.winner = function(){
 }
 
 Game.prototype.PAIRS = {
-	rock:	{ beats: ['scissors', 'lizard'] },
-	paper:  { beats: ['rock', 'spock'] },
-	scissors: { beats: ['paper', 'lizard'] },
-	lizard: { beats: ['spock', 'paper'] },
-	spock: { beats: ['scissors', 'rock'] }
+	rock:	{ scissors: '', lizard: '' },
+	paper:  { rock: '', spock: '' },
+	scissors: { paper: '', lizard: '' },
+	lizard: { spock: '', paper: '' },
+	spock: { scissors: '', rock: '' }
 }
