@@ -3,7 +3,7 @@ describe("Rock-Paper-Scissors", function() {
 
   beforeEach(function() {
 
-    player1 = new Player('Mario');
+    player1 = new Player('Dave');
     player2 = new Player('Alex');
     game = new Game(player1, player2);
 
@@ -168,14 +168,33 @@ describe("Rock-Paper-Scissors", function() {
 
   });
 
-  describe('victory messages', function() {
+  describe('losing', function (){
+	  it("knows the loser of a game", function() {
+		  player1.picks('rock');
+		  player2.picks('scissors');
+		  expect(game.loser()).toBe(player2)
+	  });
+  });
+
+  describe('winning verb', function() {
+	  it("returns the correct winning verb", function() {
+		  expect(game.winningVerb('rock', 'scissors')).toEqual("blunts");
+	  });
+  });
+
+  describe('victory message', function() {
 
     it("should return the winner's name, winner's implement, the verb and the loser's name with the loser's implement", function() {
       player1.picks('rock');
-      player2.picks('lizard');
-      expect(game.winningMessage()).toEqual("Alex's rock blunts Mario's scissors");
+      player2.picks('scissors');
+      expect(game.victoryMessage()).toEqual("Dave's rock blunts Alex's scissors");
     });
 
   });
 
 });
+
+
+
+
+
