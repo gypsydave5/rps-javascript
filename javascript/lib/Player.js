@@ -1,7 +1,7 @@
 function Player(name) {
-  this.name = name;
+	this.name = name;
 }
 
-Player.prototype.picks = function(pick) {
-  this.pick = pick;
+Player.prototype.picks = function(pick){
+	this.pick = pick
 }

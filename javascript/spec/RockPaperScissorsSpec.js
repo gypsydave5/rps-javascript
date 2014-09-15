@@ -170,10 +170,10 @@ describe("Rock-Paper-Scissors", function() {
 
   describe('victory messages', function() {
 
-    it("should return the winner's name, the verb and the loser's name", function() {
-      player1.picks('scissors');
-      player2.picks('rock');
-      expect(game.winningMessage()).toEqual('Alex crushes Mario');
+    it("should return the winner's name, winner's implement, the verb and the loser's name with the loser's implement", function() {
+      player1.picks('rock');
+      player2.picks('lizard');
+      expect(game.winningMessage()).toEqual("Alex's rock blunts Mario's scissors");
     });
 
   });
