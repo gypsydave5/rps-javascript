@@ -16,12 +16,7 @@ Game.prototype.winner = function(){
 };
 
 Game.prototype.loser = function(){
-	if (this.winner === this.player1){
-		return this.player1
-	} else {
-		return this.player2
-	}
-};
+	return (this.winner === this.player1 ? this.player1 : return this.player2
 
 Game.prototype.victoryMessage = function(){
 	var message;
@@ -51,3 +46,4 @@ Game.prototype.PAIRS = {
 	lizard: { spock: 'poisons', paper: 'eats' },
 	spock: { scissors: 'smashes', rock: 'vapourizes' }
 };
+
