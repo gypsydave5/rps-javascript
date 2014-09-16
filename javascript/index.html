@@ -1,48 +1,30 @@
-<!doctype>
+<!DOCTYPE html>
 <html>
-  <head>
-    <title>Rock Paper Scissors Lizard Spock</title>
-    <link href='style.css' rel='stylesheet'>
-  </head>
-  <body>
-    <h1>Rock Paper Scissors Lizard Spock</h1>
-    <section class='choices'>
-      <img src="images/rock.png" data-pick='rock'>
-      <img src="images/paper.png" data-pick='paper'>
-      <img src="images/scissors.png" data-pick='scissors'>
-      <img src="images/lizard.png" data-pick='lizard'>
-      <img src="images/spock.png" data-pick='spock'>
-    </section>
-    <ul id='results'>
-    </ul>
+	<head>
+		<link rel="stylesheet" href="./css/cssreset.css" type="text/css" media="all" />
+		<link rel="stylesheet" href="./css/style.css" type="text/css" media="all" />
+	</head>
+	<body>
 
-    <script src='lib/Player.js'></script>
-    <script src='lib/Game.js'></script>
-    <script src='lib/jquery-2.1.1.min.js'></script>
-    <script>
-    $(document).ready(function(){
-      var p1 = new Player('Alex');
-      var p2 = new Player('Mihai');
-      var game = new Game(p1, p2);
+		<header><h1>Rock, Paper, Scissors, Lizard, Spock</h1></header>
 
-      $('.choices img').on('click', function(){
-        p1.picks($(this).data('pick'));
-        p2.picks('rock');
+		<section id="options">
+			<img src="./images/rock.png" data-pick="rock" class="red">
+			<img src="./images/paper.png" data-pick="paper" class="blue">
+			<img src="./images/scissors.png" data-pick="scissors" class="green">
+			<img src="./images/lizard.png" data-pick="lizard" class="orange">
+			<img src="./images/spock.png" data-pick="spock" class="purple">
+		</section>
 
-        console.log('Hello')
-        // $('#results').prepend('<li>' + game.winningMessage() + '</li>');
-        $("<li>" + game.winningMessage() + "</li>").prependTo('#results').slideDown();
+		<ol id="results">
+			<li></li>
+		</ol>
 
-        $("#results li:gt(3)").fadeOut(function(){
-          $(this).remove();
-          console.log('A')
-        });
-        console.log('B')
+	</body>
 
-      })
-    })
-    </script>
+	<script type="text/javascript" charset="utf-8" src="./lib/jquery-2.1.1.min.js"></script>
+	<script type="text/javascript" charset="utf-8" src="./lib/Game.js"></script>
+	<script type="text/javascript" charset="utf-8" src="./lib/Player.js"></script>
+	<script type="text/javascript" charset="utf-8" src="./lib/controller.js"></script>
 
-  </body>
 </html>
-

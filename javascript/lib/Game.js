@@ -7,7 +7,7 @@ Game.prototype.winner = function(){
 	if (this.player1.pick === this.player2.pick) {
 		return null;
 	};
-	if (this.PAIRS[this.player1.pick][this.player2.pick] !== undefined) {
+	if (this.PAIRS[this.player1.pick][this.player2.pick] != undefined) {
 		return this.player1;
 	}
 	else {
@@ -16,17 +16,20 @@ Game.prototype.winner = function(){
 };
 
 Game.prototype.loser = function(){
-	return (this.winner === this.player1 ? this.player1 : return this.player2
+	return (this.winner() === this.player1 ? this.player2 : this.player1)
+};
 
 Game.prototype.victoryMessage = function(){
 	var message;
 
-	var winnerName = this.winner().name;
-	var loserName = this.loser().name;
-	var winningWeapon = this.winner().pick;
-	var losingWeapon = this.loser().pick;
-	var winningVerb = this.winningVerb(winningWeapon, losingWeapon);
 	if (this.winner()) {
+
+		var winnerName = this.winner().name;
+		var loserName = this.loser().name;
+		var winningWeapon = this.winner().pick;
+		var losingWeapon = this.loser().pick;
+		var winningVerb = this.winningVerb(winningWeapon, losingWeapon);
+
 		message = ( winnerName + "'s " + winningWeapon + " " + winningVerb + " " + loserName + "'s " + losingWeapon );
 	} else {
 		message = 'Draw';
