@@ -15,7 +15,7 @@ before we were gently introduced to [JavaScript] using th same project. We were
 tasked with implementing the game again but this time as a one page app with all
 the logic in JS.
 
-We were also directed to use some [JQuery] for presentation, which can be seen in
+We were also directed to use some [jQuery] for presentation, which can be seen in
 the results list, as well as testing using [Jasmine]
 
 It features some horrific CSS effects on some very simple images thanks to the
@@ -28,7 +28,7 @@ new glasses :eyes: :stuck_out_tongue_winking_eye:
   + [CSS3]
   + [HTML5]
   + [JavaScript]
-  + [JQuery]
+  + [jQuery]
 
 + Testing
   + [Jasmine]
