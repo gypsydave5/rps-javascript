@@ -59,3 +59,4 @@ choice of browser.
 [JavaScript]: https://developer.mozilla.org/en-US/docs/Web/JavaScript
 [JQuery]: http://jquery.com/
 [Jasmine]: http://jasmine.github.io/
+[Git]: http://git-scm.com/
